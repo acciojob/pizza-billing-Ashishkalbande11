@@ -5,9 +5,9 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private boolean isExtraCheeseAdded;
-    private  boolean isExtraToppingsAdded;
-    private boolean isExtraPeperAdded;
+    private boolean isAddExtraCheese;
+    private  boolean isAddExtraToppings;
+    private boolean isTakeaway;
 
 
     public Pizza(Boolean isVeg){
@@ -27,34 +27,34 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        if(!isExtraCheeseAdded){
+        if(!isAddExtraCheese){
             price += 80;
         }
 
-        isExtraCheeseAdded = true;
+        isAddExtraCheese = true;
         // your code goes here
 
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(!isExtraToppingsAdded && isVeg){
+        if(!isAddExtraToppings && isVeg){
             price += 70;
 
         }
-        if(!isExtraToppingsAdded && !isVeg){
+        if(!isAddExtraToppings && !isVeg){
             price += 120;
         }
-        isExtraToppingsAdded = true;
+        isAddExtraToppings = true;
     }
 
     public void addTakeaway(){
         // your code goes here
-        if(!isExtraPeperAdded){
+        if(!isTakeaway){
             price += 20;
 
         }
-        isExtraPeperAdded = true;
+        isTakeaway= true;
     }
 
     public String getBill(){
@@ -67,18 +67,18 @@ public class Pizza {
             bill.append("Base Price Of The Pizza: ").append("400").append("\n");
         }
 
-        if(isExtraCheeseAdded){
+        if(isAddExtraCheese){
             bill.append("Extra Cheese Added: 80\n");
         }
-        if(isExtraToppingsAdded && isVeg){
-            bill.append("Extra Toppings Added: ").append("70").append("\n");
+        if(isAddExtraToppings && isVeg){
+            bill.append("Extra Toppings Added: 70\n");
         }else{
-            bill.append("Extra Toppings Added: ").append("120").append("\n");
+            bill.append("Extra Toppings Added: 120\n");
         }
-        if(isExtraPeperAdded){
-            bill.append("Paperbag Added: ").append("20").append("\n");
+        if(isTakeaway){
+            bill.append("Paperbag Added: 20\n");
         }
-        bill.append("Total Bill: ").append(getPrice());
+        bill.append("Total Price: ").append(price).append("\n");
         return bill.toString();
     }
 }

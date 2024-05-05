@@ -15,12 +15,10 @@ public class Pizza {
         if(isVeg){
             this.price = 300;
 
-        }else{
+        }else if(!isVeg){
             this.price = 400;
         }
-        this.isExtraPeperAdded = false;
-        this.isExtraCheeseAdded = false;
-        this.isExtraToppingsAdded = false;
+
         // your code goes here
     }
 
@@ -29,7 +27,7 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        if(!isExtraCheeseAdded && isVeg){
+        if(!isExtraCheeseAdded){
             price += 80;
         }
 

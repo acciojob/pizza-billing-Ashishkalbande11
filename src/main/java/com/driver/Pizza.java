@@ -32,9 +32,7 @@ public class Pizza {
         if(!isExtraCheeseAdded && isVeg){
             price += 80;
         }
-        if(!isExtraCheeseAdded && !isVeg){
-            price += 120;
-        }
+
         isExtraCheeseAdded = true;
         // your code goes here
 
@@ -42,9 +40,12 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        if(!isExtraToppingsAdded){
+        if(!isExtraToppingsAdded && isVeg){
             price += 70;
 
+        }
+        if(!isExtraToppingsAdded && !isVeg){
+            price += 120;
         }
         isExtraToppingsAdded = true;
     }
@@ -69,9 +70,9 @@ public class Pizza {
         }
 
         if(isExtraCheeseAdded && isVeg){
-            bill.append("Extra Cheese Added: ").append("80").append("\n");
+            bill.append("Extra Cheese Added: 80\n");
         }else if(isExtraCheeseAdded && !isVeg){
-            bill.append("Extra Cheese Added: ").append("120").append("\n");
+            bill.append("Extra Cheese Added: 120\n");
         }
         if(isExtraToppingsAdded){
             bill.append("Extra Toppings Added: ").append("70").append("\n");

@@ -53,8 +53,9 @@ public class Pizza {
         // your code goes here
         if(!isExtraPeperAdded){
             price += 20;
-            isExtraPeperAdded = true;
+
         }
+        isExtraPeperAdded = true;
     }
 
     public String getBill(){
@@ -69,8 +70,7 @@ public class Pizza {
 
         if(isExtraCheeseAdded && isVeg){
             bill.append("Extra Cheese Added: ").append("80").append("\n");
-        }
-        if(isExtraCheeseAdded && !isVeg){
+        }else if(isExtraCheeseAdded && !isVeg){
             bill.append("Extra Cheese Added: ").append("120").append("\n");
         }
         if(isExtraToppingsAdded){

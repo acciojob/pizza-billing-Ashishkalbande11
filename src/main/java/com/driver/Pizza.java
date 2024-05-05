@@ -67,13 +67,13 @@ public class Pizza {
             bill.append("Base Price Of The Pizza: ").append("400").append("\n");
         }
 
-        if(isExtraCheeseAdded && isVeg){
+        if(isExtraCheeseAdded){
             bill.append("Extra Cheese Added: 80\n");
-        }else if(isExtraCheeseAdded && !isVeg){
-            bill.append("Extra Cheese Added: 120\n");
         }
-        if(isExtraToppingsAdded){
+        if(isExtraToppingsAdded && isVeg){
             bill.append("Extra Toppings Added: ").append("70").append("\n");
+        }else{
+            bill.append("Extra Toppings Added: ").append("120").append("\n");
         }
         if(isExtraPeperAdded){
             bill.append("Extra Peper Added: ").append("20").append("\n");

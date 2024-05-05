@@ -76,7 +76,7 @@ public class Pizza {
             bill.append("Extra Toppings Added: ").append("120").append("\n");
         }
         if(isExtraPeperAdded){
-            bill.append("Extra Peper Added: ").append("20").append("\n");
+            bill.append("Paperbag Added: ").append("20").append("\n");
         }
         bill.append("Total Bill: ").append(getPrice());
         return bill.toString();
